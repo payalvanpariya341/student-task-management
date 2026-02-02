@@ -98,20 +98,20 @@ body {
 /* Link Text Style */
 .link-text {
     margin-top: 25px;
-    color: #ffffff;
+    color: #126fc502;
     font-size: 0.95em;
     text-align: center;
 }
 
 .link-text a {
-    color: #00bfff;
+    color: #036485;
     text-decoration: none;
     font-weight: 600;
     transition: color 0.3s ease;
 }
 
 .link-text a:hover {
-    color: #009acd;
+    color: #30e7e7c5;
     text-decoration: underline;
 }
 

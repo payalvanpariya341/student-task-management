@@ -39,7 +39,7 @@ const Login=() =>{
             </form>
             {/* Link to Login page*/}
             <p className="link-text">
-                Already registered? <Link to="/Login">Login here</Link>
+                Already registered? <Link to="/Register">Register here</Link>
             </p>
 
             

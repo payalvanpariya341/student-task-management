@@ -40,7 +40,7 @@ function App() {
       path: "/dashboard",
       element:(
        <AuthGuard required={true}>
-       <Dashboard/>>
+       <Dashboard/>
        </AuthGuard>
       ),
     },

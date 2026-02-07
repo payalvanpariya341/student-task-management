@@ -3,10 +3,18 @@
         {
             "id":"1",
             "title":"Welcome Task",
-            "description":"This is your task served from Json-server",
+            "description":"This is your task served from json-server",
             "dueDate":"2025-09-31",
             "completed":false,
-            "prioiity":"Medium"
+            "priority":"Medium"
+        },
+        {
+            "id":"2",
+            "title":"Welcome Task",
+            "description":"This is your task served from json-server",
+            "dueDate":"2025-09-31",
+            "completed":false,
+            "priority":"Medium"
         }
     ]
 }

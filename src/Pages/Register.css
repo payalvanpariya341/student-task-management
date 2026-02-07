@@ -41,6 +41,7 @@ body {
 }
 
 .form-group label{
+    text-align: left;
     display: block;
     margin-bottom: 8px;
     color: #ffffff;
@@ -98,13 +99,13 @@ body {
 /* Link Text Style */
 .link-text {
     margin-top: 25px;
-    color: #126fc502;
+    color: #e7eaecf8;
     font-size: 0.95em;
     text-align: center;
 }
 
 .link-text a {
-    color: #036485;
+    color: #009acd;
     text-decoration: none;
     font-weight: 600;
     transition: color 0.3s ease;

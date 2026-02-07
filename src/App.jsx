@@ -1,33 +1,52 @@
-import './App.css'
-import Register from './Pages/Register'
-import Login from './Pages/Login'
-import { createBrowserRouter, RouterProvider,Navigate } from 'react-router-dom'
+import "./App.css";
+import { createBrowserRouter, Navigate, RouterProvider } from "react-router-dom";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
+import AuthGuard from "./auth/AuthGuard";
+import Dashboard from "./Pages/Dashboard";
 
-const DefaultRoute = ()=>{
-  const authData = JSON.parse(localStorage.getItem('authData'));
-  if(authData){
-    return <Navigate to="/Login" replace/>
+const DefaultRoute = () => {
+  const loginData = JSON.parse(localStorage.getItem("loginData"));
+
+  if (loginData) {
+    return <Navigate to="/dashboard" replace />;
   }
-  return <Navigate to ="/Register" replace/>
-}
+  return <Navigate to="/login" replace />;
+};
 
 function App() {
-  const route = createBrowserRouter([
+  const router = createBrowserRouter([
     {
       path: "/",
-      element: <DefaultRoute/>
+      element: <DefaultRoute />,
     },
     {
-      path: "/Login",
-      element: <Login/>
+      path: "/login",
+      element: (
+        <AuthGuard required={false}>
+          <Login />
+        </AuthGuard>
+      ),
     },
     {
-      path:"/Register",
-      element:<Register/>
-    }
-])
+      path: "/register",
+      element:(
+       <AuthGuard required={false}>
+       <Register />
+       </AuthGuard>
+      ),
+    },
+    {
+      path: "/dashboard",
+      element:(
+       <AuthGuard required={true}>
+       <Dashboard/>>
+       </AuthGuard>
+      ),
+    },
+  ]);
 
-  return <RouterProvider router={route}/>
+  return <RouterProvider router={router} />;
 }
 
-export default App
+export default App;
